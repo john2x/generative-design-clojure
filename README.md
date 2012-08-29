@@ -10,6 +10,12 @@ See [Quil's][quil] for usage instructions.
 [quil]: https://github.com/quil/quil
 [gd]: http://www.generative-gestaltung.de/code
 
+## Progress
+
+### P./// Basic Principles
+#### P.1 Colour
+1. P\_1\_0\_01 - **Done**
+
 ## License
 
 The same license as the ones found in Generative Design's code. See below.
