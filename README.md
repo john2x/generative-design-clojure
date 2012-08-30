@@ -1,7 +1,8 @@
 # Generative Design in Clojure
 
-My attempt to learn Clojure by going through the code of
-[Generative Design][gd] and porting them into Clojure with [Quil][quil].
+My attempt to learn [Clojure][] (and [Processing][]!) by going through
+the code of [Generative Design][gd] and porting them to Clojure with
+[Quil][quil].
 
 ## Usage
 
@@ -14,6 +15,8 @@ See [Quil's][quil] page for more info.
 
 [quil]: https://github.com/quil/quil
 [gd]: http://www.generative-gestaltung.de/code
+[Processing]: http://processing.org
+[Clojure]: http://clojure.org
 
 ## Progress
 
