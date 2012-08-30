@@ -22,8 +22,8 @@ See [Quil's][quil] page for more info.
 
 ### P./// Basic Principles
 #### P.1 Colour
-1. P\_1\_0\_01 - **Done**
-1. P\_1\_1\_1\_01 - **Done**
+1. P\_1\_0\_01 - added on 2012-08-29
+1. P\_1\_1\_1\_01 - added on 2012-08-30
 
 ## License
 
