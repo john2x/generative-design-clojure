@@ -23,7 +23,8 @@ See [Quil's][quil] page for more info.
 ### P./// Basic Principles
 #### P.1 Colour
 1. [**`P_1_0_01`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_1_0_01/P_1_0_01.clj) - added on 2012-08-29
-1. [**`P_1_1_1_01`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_1_1_1_01/P_1_1_1_01.clj) - added on 2012-08-30
+2. [**`P_1_1_1_01`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_1_1_1_01/P_1_1_1_01.clj) - added on 2012-08-30
+3. [**`P_1_1_2_01`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_1_1_2_01/P_1_1_2_01.clj) - added on 2012-08-30
 
 ## License
 

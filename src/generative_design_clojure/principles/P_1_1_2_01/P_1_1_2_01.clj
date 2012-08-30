@@ -17,19 +17,32 @@
 ; s             : save png
 
 (defn setup []
-  (background 0))
+  (background 0)
+  (set-state! :segment-count (atom 360)))
 
 (defn draw []
   (no-stroke)
-  (color-mode :hsb (width) (height) 100)
+  (color-mode :hsb 360 (width) (height))
+  (background 360)
   (let
-    [step-x (+ (mouse-x) 2),
-     step-y (+ (mouse-y) 2)]
+    [angle-step (/ 360 @(state :segment-count)),
+     radius 300]
+    (begin-shape :triangle-fan)
+    (vertex (/ (width) 2) (/ (height) 2))
     (doseq
-      [grid-y (range 0 (height) step-y),
-       grid-x (range 0 (width) step-x)]
-      (fill grid-x (- (height) grid-y) 100)
-      (rect grid-x grid-y step-x step-y))))
+      [angle (range 0 (+ 360 angle-step) angle-step)
+       :let [vx (+ (/ (width) 2) (* (->> angle radians cos) radius))
+             vy (+ (/ (height) 2) (* (->> angle radians sin) radius))]]
+      (vertex vx vy)
+      (fill angle (mouse-x) (mouse-y)))))
+
+(defn key-release []
+  (case (str (raw-key))
+    "1" (reset! (state :segment-count) 360)
+    "2" (reset! (state :segment-count) 45)
+    "3" (reset! (state :segment-count) 24)
+    "4" (reset! (state :segment-count) 12)
+    "5" (reset! (state :segment-count) 6)))
 
 (defn timestamp []
   (let [now (Calendar/getInstance)]
@@ -44,4 +57,5 @@
            :setup setup
            :draw draw
            :key-pressed key-press
-           :size [800 400])
+           :key-released key-release
+           :size [800 800])
