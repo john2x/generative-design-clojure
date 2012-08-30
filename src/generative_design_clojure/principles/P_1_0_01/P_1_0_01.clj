@@ -9,11 +9,12 @@
   (color-mode :hsb 360, 100, 100)
   (rect-mode :center)
   (no-stroke)
-  (let [[x y] @(state :mouse-position)]
-    (background (/ y 2.0) 100 100)
-    (fill (- 360 (/ y 2.0)) 100 100)
-    (rect 360 360 (+ x 1) (+ x 1))))
+  (background (/ (mouse-y) 2.0) 100 100)
+  (fill (- 360 (/ (mouse-y) 2.0)) 100 100)
+  (rect 360 360 (+ (mouse-x) 1) (+ (mouse-x) 1)))
 
-(defn mouse-moved []
-  (let [x (mouse-x), y (mouse-y)]
-    (reset! (state :mouse-position) [x y])))
+(defsketch P_1_0_01
+           :title "P_1_0_01"
+           :setup setup
+           :draw draw
+           :size [720 720])

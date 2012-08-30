@@ -1,11 +1,11 @@
-(ns generative-design-clojure.core
-    (:use quil.core)
-    (:require [generative-design-clojure.principles.P_1_0_01.P_1_0_01 :as dynamic]))
+(ns generative-design-clojure.core)
 
-(defsketch generative-art-p
-                      :title "Generative Design in Clojure"
-                      :setup dynamic/setup
-                      :draw dynamic/draw
-                      :mouse-moved dynamic/mouse-moved
-                      :size [720 720])
-
+(defn -main
+  "Run the sketch in `part`, `chapter`.
+  e.g.
+  `lein run principles P_1_0_01` will run the sketch in
+  principles/P_1_0_01/P_1_0_01.clj"
+  [part chapter & args]
+  (use (symbol
+         (str "generative-design-clojure."
+              part "." chapter "." chapter))))
