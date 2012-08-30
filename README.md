@@ -5,7 +5,12 @@ My attempt to learn Clojure by going through the code of
 
 ## Usage
 
-See [Quil's][quil] for usage instructions.
+    $ lein run `part` `chapter`
+	# e.g.
+	# to run the sketch in generative_design_clojure/principles/P_1_0_01
+	$ lein run principles P_1_0_01
+
+See [Quil's][quil] page for more info.
 
 [quil]: https://github.com/quil/quil
 [gd]: http://www.generative-gestaltung.de/code
