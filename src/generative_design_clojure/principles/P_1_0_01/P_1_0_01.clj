@@ -2,8 +2,7 @@
   (:use quil.core))
 
 (defn setup []
-  (no-cursor)
-  (set-state! :mouse-position (atom [0 0])))
+  (no-cursor))
 
 (defn draw []
   (color-mode :hsb 360, 100, 100)

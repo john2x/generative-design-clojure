@@ -1,7 +1,7 @@
 # Generative Design in Clojure
 
 My attempt to learn Clojure by going through the code of
-[Generative Design][gd] and porting them into Clojure.
+[Generative Design][gd] and porting them into Clojure with [Quil][quil].
 
 ## Usage
 
