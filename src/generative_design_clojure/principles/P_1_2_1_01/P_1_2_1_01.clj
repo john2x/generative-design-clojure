@@ -23,8 +23,8 @@
   (set-state!
     :tile-count-x (atom 2)
     :tile-count-y (atom 10)
-    :colors-left (atom [])
-    :colors-right (atom [])
+    :colors-left (atom (range 10)) ; start with 10 colors
+    :colors-right (atom (range 10)) ; start with 10 colors
     ; :colors (atom []) just for ase export
     :interpolate-shortest (atom true)
     :inter-col (atom (lerp-color 0 0 0)))
@@ -82,11 +82,12 @@
 
 (defn shake-colors []
   (let [colors-left (atom []),
-        colors-right (atom []),
-        tile-count-y @(state :tile-count-y)]
-    (doseq [i (range tile-count-y)]
+        colors-right (atom [])]
+
+    (doseq [i (range 10)] ; always have 10 colors
       (swap! colors-left conj (color (random 0 60) (random 0 100) 100))
       (swap! colors-right conj (color (random 160 190) 100 (random 0 100))))
+
     (reset! (state :colors-left) @colors-left)
     (reset! (state :colors-right) @colors-right)))
 
