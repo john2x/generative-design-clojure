@@ -1,7 +1,3 @@
-(ns generative-design-clojure.principles.P_1_1_2_01.P_1_1_2_01
-  (:use quil.core)
-  (:import java.util.Calendar))
-
 ; P_1_1_1_01.clj
 ;
 ; Licensed under the Apache License, Version 2.0
@@ -15,6 +11,10 @@
 ; KEYS
 ; 1-5           : number of segments
 ; s             : save png
+
+(ns generative-design-clojure.principles.P_1_1_2_01.P_1_1_2_01
+  (:use quil.core)
+  (:import java.util.Calendar))
 
 (defn setup []
   (background 0)
