@@ -4,6 +4,14 @@ My attempt to learn [Clojure][] (and [Processing][]!) by going through
 the code of [Generative Design][gd] and porting them to Clojure with
 [Quil][quil].
 
+I'll try to keep it as similar to the original as possible, for easy
+reference (and progress :P). So this might not be the best example
+for Clojure code. 
+
+When I've finished porting all of them (or when I'm confident enough),
+I'll probably go through each one again and write more elegant versions
+of each. (But that will be a long ways off.)
+
 ## Usage
 
     $ lein run `part` `chapter`
