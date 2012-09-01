@@ -8,7 +8,7 @@ I'll try to keep it as similar to the original as possible, for easy
 reference (and progress :P). So if you're looking for mind-blowing
 Clojure code, you might want to look somewhere else. 
 
-When I've finished porting all of them (or when I'm confident enough),
+When I've finished porting all of them, or when I'm confident enough,
 I'll probably go through each one again and write more elegant versions
 of each. (But that will be a *long* ways off.)
 
