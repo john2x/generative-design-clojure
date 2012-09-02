@@ -17,55 +17,60 @@
 ; s             : save png
 
 (ns generative-design-clojure.principles.P_1_2_2_01.P_1_2_2_01
-  (:use quil.core)
-  (:import java.util.Calendar))
+  (:use quil.core
+        quil.helpers.seqs
+        [quil.applet :only [current-applet]])
+  (:import java.util.Calendar
+           generativedesign.GenerativeDesign))
 
-(declare shake-colors)
+(def data-folder "P_1_2_2_01/")
 
 (defn setup []
   (color-mode :hsb 360 100 100 100)
   (no-stroke)
-  (no-cursor)
   (set-state!
-    :img (atom (load-image "data/pic1.jpg"))
+    :img (atom (load-image (str data-folder "pic1.jpg")))
     :sort-mode (atom nil)
-    :colrs (atom []))
-  (no-stroke)
-  (shake-colors))
+    :colors (atom [])))
 
 (defn draw []
   (let [tile-count (/ (width) (max (mouse-y) 5)),
         rect-size (/ (width) (float tile-count)),
-        inter-col (atom (color 0))]
+        img @(state :img)
+        colors (atom [])]
 
-    (doseq [grid-y (range tile-count-y)
-            :let [col1 (colors-left grid-y),
-                  col2 (colors-right grid-y)]]
+    ; get colors from image
+    (doseq [grid-y (range tile-count),
+            grid-x (range tile-count)]
+      (let [px (int (* grid-x rect-size)),
+            py (int (* grid-y rect-size))]
+        (swap! colors conj (.get img px py))))
 
-      (doseq [grid-x (range tile-count-x)
-              :let [amount (map-range grid-x 0 (- tile-count-x 1) 0 1)]]
+    ; sort colors
+    ; (when (not= @(state :sort-mode) nil)
+    ;   (swap! colors
+    ;          GenerativeDesign/sortColors
+    ;          (current-applet) @colors @(state :sort-mode)))
 
-        (if @(state :interpolate-shortest)
-          (do
-            ; switch to rgb
-            (color-mode :rgb 255 255 255 255)
-            (reset! (state :inter-col) (lerp-color col1 col2 amount))
-            ; switch back
-            (color-mode :hsb 360 100 100 100))
-          ; else
-          (reset! (state :inter-col) (lerp-color col1 col2 amount)))
-
-        (fill @(state :inter-col))
-        (rect (* tile-width grid-x) (* tile-height grid-y) tile-width tile-height)))))
+    ; draw grid
+    (doseq [[grid-y j] (indexed-range tile-count),
+            [grid-x k] (indexed-range tile-count)
+            :let [i (int (+ (* tile-count grid-y) k))]]
+      (fill (@colors i))
+      (rect (* grid-x rect-size) (* grid-y rect-size) rect-size rect-size))))
 
 (defn key-release []
   (case (str (raw-key))
-    "1" (reset! (state :interpolate-shortest) true)
-    "2" (reset! (state :interpolate-shortest) false)
-    nil))
+    "1" (reset! (state :img) (load-image (str data-folder "pic1.jpg")))
+    "2" (reset! (state :img) (load-image (str data-folder "pic2.jpg")))
+    "3" (reset! (state :img) (load-image (str data-folder "pic3.jpg")))
 
-(defn mouse-release []
-  (shake-colors))
+    "4" (reset! (state :sort-mode) nil)
+    "5" (reset! (state :sort-mode) (GenerativeDesign/HUE))
+    "6" (reset! (state :sort-mode) (GenerativeDesign/SATURATION))
+    "7" (reset! (state :sort-mode) (GenerativeDesign/BRIGHTNESS))
+    "8" (reset! (state :sort-mode) (GenerativeDesign/GRAYSCALE))
+    nil))
 
 (defn timestamp []
   (let [now (Calendar/getInstance)]
@@ -75,21 +80,9 @@
   (if (= (str (raw-key)) "s")
     (save-frame (str (timestamp) "_##.png"))))
 
-(defn shake-colors []
-  (let [colors-left (atom []),
-        colors-right (atom [])]
-
-    (doseq [i (range 10)] ; always have 10 colors
-      (swap! colors-left conj (color (random 0 60) (random 0 100) 100))
-      (swap! colors-right conj (color (random 160 190) 100 (random 0 100))))
-
-    (reset! (state :colors-left) @colors-left)
-    (reset! (state :colors-right) @colors-right)))
-
 (defsketch P_1_2_2_01
            :title "P_1_2_2_01"
            :setup setup
            :draw draw
            :key-released key-release
-           :mouse-released mouse-release
            :size [600 600])
