@@ -12,6 +12,32 @@ When I've finished porting all of them, or when I'm confident enough,
 I'll probably go through each one again and write more elegant versions
 of each. (But that will be a *long* ways off.)
 
+## Dependencies
+
+Install [Leiningen 2][lein].
+
+### generativedesign
+
+Download and unzip the [generativedesign][gdlib] library and then 
+perform the following:
+
+    $ mkdir repo
+	$ mvn deploy:deploy-file -DgroupId=local -DartifactId=generativedesign \
+  	    -Dversion=1.0.3 -Dpackaging=jar \
+		-Dfile=unzipped/generativedesign/library/generativedesign.jar \
+        -Durl=file:repo
+	$ lein deps
+    ...
+    Uploading: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.jar
+	Uploaded: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.jar (29 KB at 3515.5 KB/sec)
+	Uploading: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.pom
+	Uploaded: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.pom (394 B at 128.3 KB/sec)
+	Downloading: file:localrepo/local/generativedesign/maven-metadata.xml
+	Downloaded: file:localrepo/local/generativedesign/maven-metadata.xml (301 B at 147.0 KB/sec)
+	Uploading: file:localrepo/local/generativedesign/maven-metadata.xml
+	Uploaded: file:localrepo/local/generativedesign/maven-metadata.xml (301 B at 147.0 KB/sec)
+	...
+
 ## Usage
 
     $ lein run `part` `chapter`
@@ -25,6 +51,8 @@ See [Quil's][quil] page for more info.
 [gd]: http://www.generative-gestaltung.de/code
 [Processing]: http://processing.org
 [Clojure]: http://clojure.org
+[lein]: https://github.com/technomancy/leiningen
+[gdlib]: http://www.generative-gestaltung.de/codes/generativedesign/index.html#download
 
 ## Progress
 
