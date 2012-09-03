@@ -28,14 +28,14 @@ perform the following:
         -Durl=file:repo
 	$ lein deps
     ...
-    Uploading: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.jar
-	Uploaded: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.jar (29 KB at 3515.5 KB/sec)
-	Uploading: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.pom
-	Uploaded: file:localrepo/local/generativedesign/1.0.3/generativedesign-1.0.3.pom (394 B at 128.3 KB/sec)
-	Downloading: file:localrepo/local/generativedesign/maven-metadata.xml
-	Downloaded: file:localrepo/local/generativedesign/maven-metadata.xml (301 B at 147.0 KB/sec)
-	Uploading: file:localrepo/local/generativedesign/maven-metadata.xml
-	Uploaded: file:localrepo/local/generativedesign/maven-metadata.xml (301 B at 147.0 KB/sec)
+    Uploading: file:repo/local/generativedesign/1.0.3/generativedesign-1.0.3.jar
+	Uploaded: file:repo/local/generativedesign/1.0.3/generativedesign-1.0.3.jar (29 KB at 3515.5 KB/sec)
+	Uploading: file:repo/local/generativedesign/1.0.3/generativedesign-1.0.3.pom
+	Uploaded: file:repo/local/generativedesign/1.0.3/generativedesign-1.0.3.pom (394 B at 128.3 KB/sec)
+	Downloading: file:repo/local/generativedesign/maven-metadata.xml
+	Downloaded: file:repo/local/generativedesign/maven-metadata.xml (301 B at 147.0 KB/sec)
+	Uploading: file:repo/local/generativedesign/maven-metadata.xml
+	Uploaded: file:repo/local/generativedesign/maven-metadata.xml (301 B at 147.0 KB/sec)
 	...
 
 ## Usage
