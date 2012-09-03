@@ -6,6 +6,6 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [quil "1.6.0"]
                  [local/generativedesign "1.0.3"]]
-  :repositories {"project" "file:localrepo"}
+  :repositories {"project" "file:repo"}
   :main generative-design-clojure.core)
  
