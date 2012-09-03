@@ -47,16 +47,18 @@
         (swap! colors conj (.get img px py))))
 
     ; sort colors
-    ; (when (not= @(state :sort-mode) nil)
-    ;   (swap! colors
-    ;          GenerativeDesign/sortColors
-    ;          (current-applet) @colors @(state :sort-mode)))
+    (if (not= @(state :sort-mode) nil)
+      (reset! (state :colors) (vec (GenerativeDesign/sortColors
+                                    (current-applet)
+                                    (int-array @colors)
+                                    @(state :sort-mode))))
+      (reset! (state :colors) @colors))
 
     ; draw grid
     (doseq [[grid-y j] (indexed-range tile-count),
             [grid-x k] (indexed-range tile-count)
             :let [i (int (+ (* tile-count grid-y) k))]]
-      (fill (@colors i))
+      (fill (@(state :colors) i))
       (rect (* grid-x rect-size) (* grid-y rect-size) rect-size rect-size))))
 
 (defn key-release []
