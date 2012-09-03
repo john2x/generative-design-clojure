@@ -12,5 +12,6 @@ pom.xml
 /doc
 /test
 /localrepo
+/repo
 *.pde
 *.png
