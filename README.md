@@ -21,6 +21,7 @@ Install [Leiningen 2][lein].
 Download and unzip the [generativedesign][gdlib] library and then 
 perform the following:
 
+	$ cd generative-design-clojure
     $ mkdir repo
 	$ mvn deploy:deploy-file -DgroupId=local -DartifactId=generativedesign \
   	    -Dversion=1.0.3 -Dpackaging=jar \
