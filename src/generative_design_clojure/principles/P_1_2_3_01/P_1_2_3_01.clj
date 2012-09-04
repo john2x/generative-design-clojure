@@ -45,9 +45,9 @@
         (do
           (swap! hue-values conj (eval hue-fn-2))
           (swap! saturation-values conj (eval saturation-fn-2))
-          (swap! brightness-values conj (eval brightness-fn-2))))
+          (swap! brightness-values conj (eval brightness-fn-2)))))
 
-    [@hue-values @saturation-values @brightness-values])))
+    [@hue-values @saturation-values @brightness-values]))
 
 (defn setup []
   (color-mode :hsb 360 100 100 100)
