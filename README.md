@@ -19,7 +19,7 @@ Install [Leiningen 2][lein].
 ### generativedesign
 
 Download and unzip the [generativedesign][gdlib] library and then 
-perform the following:
+perform the [following](https://gist.github.com/3062743#gistcomment-366326):
 
 	$ cd generative-design-clojure
     $ mkdir repo
