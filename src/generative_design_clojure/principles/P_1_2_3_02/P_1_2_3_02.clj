@@ -89,15 +89,14 @@
           row-height)
         (swap! counter inc))))
 
-  (.noLoop (current-applet)))
-
+  (no-loop))
 
 (defn timestamp []
   (let [now (Calendar/getInstance)]
     (format "%1$ty%1$tm%1$td_%1$tH%1$tM%1$tS" now)))
 
 (defn mouse-release []
-  (.loop (current-applet)))
+  (start-loop))
 
 (defn key-release []
   (case (str (raw-key))
