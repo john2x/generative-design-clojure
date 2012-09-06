@@ -81,7 +81,7 @@
               :let [index (mod @counter @(state :color-count)),
                     x (map-range @sum-parts-now 0 @sum-parts-total 0 (width)),
                     y (* row-height i),
-                    w (* (map-range (@parts ii) 0 @sum-parts-total 0 (width)) 1),
+                    w (map-range (@parts ii) 0 @sum-parts-total 0 (width)), ; not sure why the Processing version multiplies by -1 here
                     h (* row-height 1.5)]]
         (swap! sum-parts-now + (@parts ii))
 
