@@ -29,12 +29,12 @@
   (translate (/ (width) 2) (/ (height) 2))
 
   (let [circle-resolution (int (map-range (mouse-y) 0 (height) 2 80)),
-        radius (+ (/ (- (mouse-x) (width)) 2) 0.5),
+        radius (+ 0.5 (- (mouse-x) (/ (width) 2))),
         angle (/ TWO-PI circle-resolution)]
     (stroke-weight (/ (mouse-y) 20))
     
     (begin-shape)
-    (doseq [i (range circle-resolution)
+    (doseq [i (range-incl circle-resolution)
             :let [x (* (cos (* angle i)) radius),
                   y (* (sin (* angle i)) radius)]]
       (line 0 0 x y))
