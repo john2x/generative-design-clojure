@@ -2,7 +2,7 @@
 ;
 ; Licensed under the Apache License, Version 2.0
 
-; drawing a filled circle with lines
+; changing strokeweight and strokecaps on diagonals in a grid
 ;
 ; MOUSE
 ; position x      : left diagonal strokeweight
