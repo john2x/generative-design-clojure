@@ -71,6 +71,7 @@ See [Quil's][quil] page for more info.
 
 #### P.2 Form
 1. [**`P_2_0_01`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_2_0_01/P_2_0_01.clj)
+2. [**`P_2_0_02`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_2_0_02/P_2_0_02.clj)
 
 ## License
 
