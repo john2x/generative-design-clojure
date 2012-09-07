@@ -15,15 +15,11 @@
   (:use quil.core
         quil.helpers.seqs
         [quil.applet :only [current-applet]])
-  (:import java.util.Calendar))
+  (:import java.util.Calendar
+           generativedesign.GenerativeDesign))
 
 (defn setup []
-  (set-state!
-    :hue-values (atom [])
-    :saturation-values (atom [])
-    :brightness-values (atom [])
-    :color-count (atom 20)
-    :act-random-seed (atom 0)))
+  )
 
 (defn draw []
   (stroke-cap :square)
