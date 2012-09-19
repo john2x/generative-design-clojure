@@ -87,6 +87,7 @@ See [Quil's][quil] page for more info.
 15. [**`P_2_1_3_04`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_2_1_3_04/P_2_1_3_04.clj)
 16. [**`P_2_1_3_05`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_2_1_3_05/P_2_1_3_05.clj)
 17. [**`P_2_2_1_01`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_2_2_1_01/P_2_2_1_01.clj)
+18. [**`P_2_2_1_02`**](https://github.com/john2x/generative-design-clojure/blob/master/src/generative_design_clojure/principles/P_2_2_1_02/P_2_2_1_02.clj)
 
 ## License
 
